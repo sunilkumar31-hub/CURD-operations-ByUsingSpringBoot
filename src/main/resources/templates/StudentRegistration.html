@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color:gray ;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: #333;
+    }
+    form {
+        background-color: skyblue  ;
+        padding: 30px;
+        border-radius: 10px;
+       
+        width: 300px;
+        margin: auto;
+         box-shadow: 10px 8px 5px rgba( 0,0,0,0.5);
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+          box-shadow: inset 2px 1px 2px rgba(0,0,0,0.2);
+    }
+    input[type="submit"] {
+        background-color:red;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+        background-color: green ;
+    }
+    h3 {
+        color: red;
+        text-align: center ;
+    }
+</style>
+</head>
+<body>
+
+ <center><h1>Student Registration page</h1>
+ 
+ <form action="registration">
+ 
+ <input placeholder="Student Name" name="name"><br>
+ <input placeholder="Student Emailid" name="emailid"><br>
+ <input placeholder="Student Mobile Number" name="number"><br>
+ <input placeholder="Student Password" name="password"><br>
+ <input placeholder="Student Gender" name="gender"><br>
+ <input placeholder="Student Age" name="age"><br>
+ <input placeholder="Student Dept" name="dept"><br>
+ <input placeholder="Student Percentage" name="percentage"><br>
+ <input type="submit" >
+ 
+ </form>
+ 
+
+ <h3 th:text=${exceptionmsg}></h3>
+
+ </center>
+ 
+</body>
+</html>

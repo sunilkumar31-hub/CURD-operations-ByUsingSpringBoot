@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>All Student Details</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 30px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 2px #ccc;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .form-row form {
+        display: flex;
+        gap: 5px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        width: 180px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: inset 5px 5px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    input[type="submit"] {
+        padding: 10px 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        width: 90%;
+        background-color: white;
+        box-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+    }
+
+    th, td {
+        padding: 12px 15px;
+        border: 1px solid #dee2e6;
+        text-align: center;
+    }
+
+    th {
+        background-color: #343a40;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #e0f7fa;
+    }
+</style>
+</head>
+<body>
+
+<h1>ALL STUDENT DETAILS</h1>
+
+<div class="form-row">
+    <form action="byname">
+        <input type="text" placeholder="Search by name" name="name">
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="byemail">
+        <input type="text" placeholder="Search by email" name="email">
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="bydept">
+        <input type="text" placeholder="Search by dept" name="dept">
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="byfilter">
+        <input type="text" placeholder="by name,dept,email anyone" name="filter">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<table border="2">
+    <tr>
+        <th>Student Name</th>
+        <th>Student Email</th>
+        <th>Student Number</th>
+        <th>Student Password</th>
+        <th>Student Gender</th>
+        <th>Student Age</th>
+        <th>Student Department</th>
+        <th>Student Percentage</th>
+    </tr>
+    <tr th:each="student:${allstudents}">
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.emailid}"></td>
+        <td th:text="${student.number}"></td>
+        <td th:text="${student.password}"></td>
+        <td th:text="${student.gender}"></td>
+        <td th:text="${student.age}"></td>
+        <td th:text="${student.dept}"></td>
+        <td th:text="${student.percentage}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
