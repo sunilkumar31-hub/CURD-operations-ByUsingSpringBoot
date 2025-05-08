@@ -17,8 +17,6 @@ import com.firstspringboot.service.StudentService;
 @Controller
 public class StudentController {
 	
-	@Autowired
-	StudentDAO studentDAO;
 	
 	@Autowired
 	StudentService studentService;
